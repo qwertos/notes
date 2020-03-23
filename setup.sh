@@ -11,6 +11,8 @@ function notes(){
 		$@
 	elif [[ "$timecode" == 'vim' ]] ; then
 		$@
+	elif [[ "$timecode" == 'cat' ]] ; then
+		$@
 	elif [[ "$timecode" == 'active' ]] ; then
 		if [[ -z "$var2" && -e active.md ]] ; then
 			rm -f active.md
