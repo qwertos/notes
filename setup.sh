@@ -1,3 +1,5 @@
+echo $BASH_SOURCE[0]
+
 function notes(){
 	local var1=$1
 	local var2=$2
