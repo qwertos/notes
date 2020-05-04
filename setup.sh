@@ -17,7 +17,7 @@ function notes(){
 	local var1=$1
 	local var2=$2
 	local timecode="${var1:-now}"
-	pushd ~/workspace/notes
+	pushd ${NOTES_PATH}
 	if [[ "$timecode" == 'ls' ]] ; then
 		$@
 	elif [[ "$timecode" == 'grep' ]] ; then
