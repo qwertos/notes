@@ -1,5 +1,18 @@
-echo $BASH_SOURCE[0]
+last_arg=$_
+if [[ "$(basename $last_arg)" != "setup.sh" ]] ; then
+	last_arg=$BASH_SOURCE
+fi
 
+if [[ "$(basename $last_arg)" != "setup.sh" ]] ; then
+	if [[ -z $NOTES_PATH ]] ; then
+		echo 'Please set $NOTES_PATH'
+	fi
+else
+	NOTES_PATH="$(dirname $last_arg)"
+fi
+unset last_arg
+
+echo "NOTES_PATH=${NOTES_PATH}"
 function notes(){
 	local var1=$1
 	local var2=$2
