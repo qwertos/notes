@@ -49,7 +49,7 @@ function notes(){
 		git add .
 		git commit -a -m 'automated commit'
 	elif [[ "$timecode" == 'push' ]] ; then
-		git push -u origin master
+		git push -u origin `git rev-parse --abbrev-ref HEAD`
 	elif [[ -e "$timecode" ]]; then
 		$EDITOR "${timecode}"
 		git add .
